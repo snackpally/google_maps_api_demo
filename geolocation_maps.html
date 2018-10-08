@@ -47,6 +47,7 @@ your name.
     var service;
     var infowindow;
     var markers = [];
+    var collection = [];
 
     function initMap() {
       var mapCenter = new google.maps.LatLng(0,0);
@@ -60,6 +61,8 @@ your name.
     function callback(results, status) {
       console.log(status);
       if (status == google.maps.places.PlacesServiceStatus.OK) {
+        collection.push(results);
+        console.log(collection);
         for (var i = 0; i < results.length; i++) {
           var place = results[i];
           console.log(place);
@@ -87,7 +90,7 @@ your name.
       event.preventDefault();
     });
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=<APIKEY>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzoySW_T8dB3xtNKq1LcihimINQEwj76c
 &libraries=places&callback=initMap"
     async defer></script>
   </body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+    <meta charset="utf-8">
+    <title>Map with one marker</title>
+  </head>
+  <body>
+    <h2 class="intro">This is how you place a Map with a marker on it</h2>
+    <!-- Here is the div for the map  -->
+    <div id="map"></div>
+    <script>
+      // intialize the map
+      function initMap() {
+        // declare a variable with a location stored in an object that we can use as a referance point on the map
+        var missoula = {lat: 46.8721, lng: -113.9940};
+        // The map and centered on our variable above
+        var map = new google.maps.Map(
+          document.getElementById('map'), {
+            zoom: 4,
+            center: missoula
+          }
+        );
+        // place a marker on missola or anywhere else if you want
+        var marker = new google.maps.Marker({
+          position: missoula,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzoySW_T8dB3xtNKq1LcihimINQEwj76c&callback=initMap">
+    </script>
+  </body>
+</html>
