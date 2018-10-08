@@ -1,0 +1,3 @@
+[submodule "v3-utility-library"]
+	path = v3-utility-library
+	url = https://github.com/googlemaps/v3-utility-library.git
